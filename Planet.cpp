@@ -5,8 +5,8 @@
 
 // You should also randomly select a planet type between rocky, habitable, and gaseous. Add a new private variable, char type that represents the planet type with a character: 'h' = habitable, 'r'=rocky, 'g'=gaseous
 
-Planet::Planet(int distance, int id){
-	this->id = id;
+Planet::Planet(int distance){
+	//this->id = id; //removed in update
 	this->distance = distance;
     this->pos = (rand() %359); // TODO: double check if this should be 359 or 360 to include 359
 	int selector = (rand()%3);

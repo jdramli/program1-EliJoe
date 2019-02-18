@@ -10,9 +10,9 @@ class Planet{
 		char type;
 	public:
 		Planet(){this->id=-1;};
-		Planet(int,int);
+		Planet(int);
         int orbit();
-		int getID() {return this->id;}
+		long getID() {return this->id;} //This needs to be a long and h old the address
         int getDistance() {return this->distance;}
         int getPos() {return this->pos;}
 		char getType() {return this->type;}
