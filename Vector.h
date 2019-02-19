@@ -1,4 +1,4 @@
-//Vector.h
+//Vector.h Program1
 
 #ifndef VECTORH_JDR
 #define VECTORH_JDR

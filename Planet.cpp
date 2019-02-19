@@ -1,4 +1,4 @@
-//Planet.cpp
+//Planet.cpp Program1
 #include "Planet.h"
 #include <cstdlib> // Necessary for random number generator.
 #include <iostream>//Necessary for IO
@@ -7,6 +7,7 @@
 
 Planet::Planet(int distance){
 	//this->id = id; //removed in update
+	
 	this->distance = distance;
     this->pos = (rand() %359); // TODO: double check if this should be 359 or 360 to include 359
 	int selector = (rand()%3);

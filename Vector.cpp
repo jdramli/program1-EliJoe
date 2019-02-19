@@ -1,8 +1,8 @@
+//Vector.cpp Program1
+
 #include "Vector.h"
 #include <iostream>
 #include <cstdlib>
-
-//Vector.cpp
 
 Vector::Vector(){
 	
