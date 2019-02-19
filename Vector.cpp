@@ -69,6 +69,9 @@ Planet* Vector::read(int index){
 
 
 bool Vector::remove(int index){
+	
+	if(index < 0 || index > this->current_elements){ return false;} //Can only remove the planet if the index is valid, otherwise returns false.
+	
 	Planet ** temp_vec = new Planet*[this->current_elements-1];
 	//NOTE** NEED TO USE THE HANDLE AT THE INDEX TO DELETE THE PLANET OBJECT BEFORE COPYING THE NEW POINTERS
 	delete vector[index]; //this should actually take the pointer at the index and delete the underlying planet object
@@ -85,13 +88,16 @@ bool Vector::remove(int index){
 	this->vector = temp_vec;
 	
 	this->current_elements--;
+	return true;
 	
 }
 
-unsigned Vector::size(){
+unsigned int Vector::size(){
 
 	//calculating size could be the number of bytes of each element combined
 	//or the acutal # of elements.
+	
+	return 0;
 	
 }
 
