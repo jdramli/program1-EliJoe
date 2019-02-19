@@ -3,12 +3,13 @@
 #ifndef VECTORH_JDR
 #define VECTORH_JDR
 
+#include "Planet.h"
 
 class Vector{
 
 private:
 	int current_elements;
-	Vector ** vector;
+	Planet ** vector;
 
 public:
 Vector();

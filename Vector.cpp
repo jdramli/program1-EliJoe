@@ -15,7 +15,7 @@ Vector::~Vector(){
 	for(int i = 0; i < this->current_elements; i++){ //sizeof(vector)/sizeof(vector[0])
 		delete vector[i];
 	}
-	delete [] vector;
+	if(this->vector != NULL) delete [] vector;
 
 }
 
@@ -25,7 +25,7 @@ void Vector::insert(int index, Planet* p){
 	if(index > this->current_elements){
 		//This is where we increase capacity to the size of the index+1
 		//the planet pointer is being passed with "p" so we dont' need to create any planet objects 
-		Vector ** temp_vec = new Vector* [this->current_elements+1];
+		Planet ** temp_vec = new Planet* [this->current_elements+1];
 		for(int i = 0; i < this->current_elements; i++){
 			temp_vec[i] = vector[i]; 
 		}
@@ -39,7 +39,7 @@ void Vector::insert(int index, Planet* p){
 			//Add the pointer element to the array of pointers
 			
 			//Add two loops to account for the vector array.
-			Vector ** temp_vec = new Vector*[this->current_elements+1];
+			Planet ** temp_vec = new Planet*[this->current_elements+1];
 			for(int i = 0; i < this->current_elements; i++){
 				
 				if(i < index){
@@ -59,7 +59,7 @@ void Vector::insert(int index, Planet* p){
 
 Planet* Vector::read(int index){
 	
-	if(index > this->current_elements{
+	if(index > this->current_elements || index < 0){
 		return NULL;
 	}
 	
@@ -69,7 +69,7 @@ Planet* Vector::read(int index){
 
 
 bool Vector::remove(int index){
-	Vector ** temp_vec = new Vector*[this->current_elements-1];
+	Planet ** temp_vec = new Planet*[this->current_elements-1];
 	//NOTE** NEED TO USE THE HANDLE AT THE INDEX TO DELETE THE PLANET OBJECT BEFORE COPYING THE NEW POINTERS
 	delete vector[index]; //this should actually take the pointer at the index and delete the underlying planet object
 	for(int i = 0; i < this->current_elements; i++){

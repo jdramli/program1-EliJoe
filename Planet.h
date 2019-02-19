@@ -9,10 +9,9 @@ class Planet{
 		int distance;
 		char type;
 	public:
-		Planet(){this->id=-1;};
-		Planet(int);
+		Planet(int); //Should we also have a no-argument creator as well?
         int orbit();
-		long getID() {return this->id;} //This needs to be a long and h old the address
+		long int getID() {return this->id;} //This needs to be a long and h old the address
         int getDistance() {return this->distance;}
         int getPos() {return this->pos;}
 		char getType() {return this->type;}
