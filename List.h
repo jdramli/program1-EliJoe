@@ -7,7 +7,7 @@ class Node{
 	
 public:
 //used exact data and node variable names from the class notes.  This seems like a good idea for these two names to always be used in both academics and industry.
-	int data; // In this case, our data will probably also include a planet pointer?
+	int data; // In this case, our data will probably also include a planet pointer? or an index? or remove this?
 	Planet * planet;
 	Node * next; //CAN CONSIDER ADDING A "*prev" node if we need that functionality 
 	Node * prev;
