@@ -9,7 +9,8 @@ public:
 //used exact data and node variable names from the class notes.  This seems like a good idea for these two names to always be used in both academics and industry.
 	int data; // In this case, our data will probably also include a planet pointer?
 	Planet * planet;
-	Node * next = Node(); //CAN CONSIDER ADDING A "*prev" node if we need that functionality 
+	Node * next; //CAN CONSIDER ADDING A "*prev" node if we need that functionality 
+	Node * prev;
 	Node(int num) {data = num; next = NULL;
 	
 //This class is done in List with an inline constructor because this seems to be a popular way to organize the Node that will be the building block of the Linked List in this file (or these types of files).
