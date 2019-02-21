@@ -4,9 +4,42 @@
 #include <cstdlib>
 #include "Star.h"
 
+Starvector::Starvector(){
+	//initialize memory
+	this->current_elements = 0;
+}
+Starvector::~Starvector(){
+	//deallocate all memory when Star is deleted (this Starvector is deleted)
+	for(int i = 0; i < this->current_elements; i++){
+		delete vector[i];
+	}
+	delete [] vector;
+}
+long Starvector::addPlanet(){
+	
+	
+	
+}
+bool Starvector::removePlanet(int){
+	
+}
+Planet* Starvector::getPlanet(int){
+	
+}
+void Starvector::orbit(){
+	
+}
+void Starvector::printStarInfo(){
+	
+}
+unsigned int Starvector::getCurrentNumPlanets(){
+	
+}
 
 Starlist::Starlist(){
 	//initialize memory
+	
+	
 }
 Starlist::~Starlist(){
 		//deallocate memory on deletion of Star(this Starlist class)
@@ -34,27 +67,4 @@ unsigned int Starlist::getCurrentNumPlanets(){
 
 
 
-Starvector::Starvector(){
-	//initialize memory
-}
-Starvector::~Starvector(){
-	//deallocate all memory when Star is deleted (this Starvector is deleted)
-}
-long Starvector::addPlanet(){
-	
-}
-bool Starvector::removePlanet(int){
-	
-}
-Planet* Starvector::getPlanet(int){
-	
-}
-void Starvector::orbit(){
-	
-}
-void Starvector::printStarInfo(){
-	
-}
-unsigned int Starvector::getCurrentNumPlanets(){
-	
-}
+

@@ -10,7 +10,7 @@ class Vector{
 private:
 	int current_elements;
 	Planet ** vector;
-
+	unsigned long capacity;
 public:
 Vector();
 ~Vector();
@@ -18,7 +18,7 @@ Vector();
 void insert(int, Planet*);
 Planet * read(int);
 bool remove(int);
-unsigned size();
+unsigned long size();
 
 
 

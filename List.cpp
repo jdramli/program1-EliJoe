@@ -116,7 +116,16 @@ bool List::remove(int index){
 	return true;
 	
 }
-unsigned List::size(){
-	
-	
+unsigned long List::size(){
+	if(head == NULL){
+			return 0;
+	}
+	long counter = 1; // if head->next == NULL then we won't enter the loop, and head will be the 1 element in the list
+	Node current = head;
+	 
+	while(current->next !=NULL){
+			current = current->next;
+			counter++;
+	}
+	return counter;
 }

@@ -8,6 +8,7 @@ Vector::Vector(){
 	
 	this->vector = NULL;
 	this->current_elements = 0;
+	this->capacity = 0;
 
 }
 
@@ -33,6 +34,7 @@ void Vector::insert(int index, Planet* p){
 		temp_vec[this->current_elements] = p;
 		vector = temp_vec;
 		this->current_elements++;
+		this->capacity = this->capacity + (index - this->current_elements);
 		
 	}
 	else{
@@ -53,6 +55,7 @@ void Vector::insert(int index, Planet* p){
 			if(vector != NULL) {delete [] this->vector;} //CAN'T FORGET THIS TO DELETE THE MEMORY OF OLD POINTER ARRAY
 			vector = temp_vec;
 			this->current_elements++;
+			this->capacity = this->capacity + (index - this->current_elements);
 	}
 
 }
@@ -92,7 +95,7 @@ bool Vector::remove(int index){
 	
 }
 
-unsigned int Vector::size(){
+unsigned long Vector::size(){
 
 	//calculating size could be the number of bytes of each element combined
 	//or the acutal # of elements.
