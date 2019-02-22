@@ -6,8 +6,9 @@
 #include "Vector.h"
 
 
+
 class Starvector{
-	
+
 	//int current_planets;
 	Vector planets_vector; //double check if this should be a pointer or not.
 	//int next_id; //prob don't need this
@@ -44,5 +45,3 @@ public:
 
 
 #endif
-
-
