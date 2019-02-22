@@ -8,6 +8,7 @@
 class Starvector{
 	
 	int current_planets;
+	Vector* planets; //double check if this should be a pointer or not.
 	//int next_id; //prob don't need this
 
 

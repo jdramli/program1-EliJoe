@@ -14,7 +14,7 @@ List::List(){
 
 
 List::~List(){
-	
+	//might need to be populated
 }
 
 
@@ -22,7 +22,12 @@ List::~List(){
 void List::insert(int index, Planet* planet){
 	
 	Node * temp_add = new Node();
-	temp_add->planet = new Planet(rand() %3000);
+	temp_add->planet = planet;
+	
+	if(head == NULL){
+		head = temp_add;
+		return;
+	}
 	
 	int counter = 0;
 	Node current = head;

@@ -7,13 +7,14 @@
 Starvector::Starvector(){
 	//initialize memory
 	this->current_elements = 0;
+	Vector * planets_vector = NULL;
 }
 Starvector::~Starvector(){
 	//deallocate all memory when Star is deleted (this Starvector is deleted)
 	for(int i = 0; i < this->current_elements; i++){
-		delete vector[i];
+		delete planets_vector[i];
 	}
-	delete [] vector;
+	delete [] planets_vector;
 }
 long Starvector::addPlanet(){
 	
@@ -38,6 +39,7 @@ unsigned int Starvector::getCurrentNumPlanets(){
 
 Starlist::Starlist(){
 	//initialize memory
+	
 	
 	
 }
