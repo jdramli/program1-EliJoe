@@ -43,17 +43,16 @@ void List::insert(int index, Planet* planet){
 		current = current->next;
 		counter++;		
 	}
-	/*
-	if(current->next == tail){
-		//point temp_add->next to tail
-		//point temp_add->previous to current
-		//break link between current and tail  and reset to temp_add
-		temp_add->next = tail;
-		temp_add->prev = current;
+	
+	if(current->next == NULL){
+		//temp_add is the new tail.
 		current->next = temp_add;
-		tail->prev = temp_add;
+		temp_add->next = NULL;
+		temp_add->prev = current;
+		tail = temp_add;
+			
 		return;
-	}*/
+	}
 	/*
 	Node* temp_end = current->next;
 	temp_add->next = temp_end;
