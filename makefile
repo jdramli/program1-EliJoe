@@ -38,7 +38,9 @@ runval:	all
 		
 	
 clean:
-	rm $(P).o
 	rm $(Q).o 
 	rm $(R).o
+	rm $(L).o
+	rm $(P).o
 	rm $(M)
+

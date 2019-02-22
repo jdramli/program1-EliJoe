@@ -3,9 +3,13 @@
 #include <iostream>
 #include <cstdlib>
 #include "List.h"
+#include "Planet.h"
 
 
-
+Node::Node(){
+	this->next = NULL;
+	this->prev = NULL;
+}
 
 List::List(){
 	this->head = NULL;
@@ -30,7 +34,7 @@ void List::insert(int index, Planet* planet){
 	}
 	
 	int counter = 1;
-	Node current = head;
+	Node * current = head;
 	while(counter < index){ //THIS LOOP IS DESIGNED TO APPEND TO THE TAIL AND RETURN -- IF THE INDEX IS OUT OF BOUNDS
 		if(current->next == NULL){
 			//append temp node to end of list and return out of the function.
@@ -69,7 +73,7 @@ void List::insert(int index, Planet* planet){
 	
 }
 
-List::Planet* read(int index){
+Planet* List::read(int index){
 	
 	if(head == NULL){ //This will check initially if the array is empty and therefore the index is out of bounds, and return NULL
 		return NULL;
@@ -79,7 +83,7 @@ List::Planet* read(int index){
 	}
 	
 	int counter = 0; //might not need this if we iterate using current->data?  
-	Node current = head;
+	Node * current = head;
 	while(counter < index){
 		if(current->next == NULL){ //This will stop iteration if the index is out of bounds
 			return NULL;
@@ -98,7 +102,7 @@ bool List::remove(int index){
 	}
 //This part hndles if the head is the index AND the only memeber in the list
 	int counter = 0;
-	Node current = this->head;
+	Node * current = this->head;
 	if(index == 0){
 		if(head->next == NULL){
 			//TODO: finish these
@@ -124,7 +128,7 @@ bool List::remove(int index){
 	Node * temp_left = current->prev;
 	Node * temp_right = current->next;
 	delete current;
-	temp_left->next = temp->right;
+	temp_left->next = temp_right;
 	temp_right->prev = temp_left;
 	return true;
 	
@@ -134,7 +138,7 @@ unsigned long List::size(){
 			return 0;
 	}
 	long counter = 1; // if head->next == NULL then we won't enter the loop, and head will be the 1 element in the list
-	Node current = head;
+	Node * current = head;
 	 
 	while(current->next !=NULL){
 			current = current->next;
