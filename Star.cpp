@@ -2,23 +2,27 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "Star.h"
+
+
 
 Starvector::Starvector(){
 	//initialize memory
-	this->current_elements = 0;
-	Vector * planets_vector = NULL;
+	//this->current_elements = 0;
+	//this->planets_vector = NULL;
 }
 Starvector::~Starvector(){
 	//deallocate all memory when Star is deleted (this Starvector is deleted)
+	/*
 	for(int i = 0; i < this->current_elements; i++){
 		delete planets_vector[i];
 	}
 	delete [] planets_vector;
+	*/
 }
 long Starvector::addPlanet(){
-	
-	
+	long current_size = planets_vector.size();
+	Planet * new_planet = new Planet(rand()%3000);
+	this->planets_vector.insert(current_size,new_planet);
 	
 }
 bool Starvector::removePlanet(int){

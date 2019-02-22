@@ -1,14 +1,15 @@
 //Star.h Program1
 
-#ifndef
-#define
-
+#ifndef STARH_JDR
+#define STARH_JDR
+#include "Planet.h"
+#include "Vector.h"
 
 
 class Starvector{
 	
-	int current_planets;
-	Vector* planets; //double check if this should be a pointer or not.
+	//int current_planets;
+	Vector planets_vector; //double check if this should be a pointer or not.
 	//int next_id; //prob don't need this
 
 
