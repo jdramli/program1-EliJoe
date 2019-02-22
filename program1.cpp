@@ -109,6 +109,9 @@ int main(){
 
     cerr << "\n\t=========Test #9 Passed...            ===========\n\n";
 
+//#define j_break_1
+//#ifdef testtesttest
+
     cerr << "\t-----------------------------------\n";
     cerr << "\t-          Part B: Lists        -\n";
     cerr << "\t-----------------------------------\n";
@@ -273,3 +276,4 @@ int main(){
     cerr << "\n\t========= Don't forget to submit your hash and check your code with Valgrind! ===========\n\n";
     return 0;
 }
+//#endif
