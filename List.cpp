@@ -29,9 +29,9 @@ void List::insert(int index, Planet* planet){
 		return;
 	}
 	
-	int counter = 0;
+	int counter = 1;
 	Node current = head;
-	while(counter < index){
+	while(counter < index){ //THIS LOOP IS DESIGNED TO APPEND TO THE TAIL AND RETURN -- IF THE INDEX IS OUT OF BOUNDS
 		if(current->next == NULL){
 			//append temp node to end of list and return out of the function.
 			current->next = temp_add;
@@ -41,8 +41,9 @@ void List::insert(int index, Planet* planet){
 			return;
 		}
 		current = current->next;
-		counter++		
+		counter++;		
 	}
+	/*
 	if(current->next == tail){
 		//point temp_add->next to tail
 		//point temp_add->previous to current
@@ -52,12 +53,20 @@ void List::insert(int index, Planet* planet){
 		current->next = temp_add;
 		tail->prev = temp_add;
 		return;
-	}
+	}*/
+	/*
 	Node* temp_end = current->next;
 	temp_add->next = temp_end;
 	temp_add->prev = current;
 	current->next = temp_add;
 	temp_end->prev = temp_add;
+	*/
+	temp_add->next = current->next; // points addition to right side of insert
+	current->next->prev = temp_add; //points the right side of current back at temp_add
+	temp_add->prev = current;       //points the temp_add to the left side of insert (back at current)
+	current->next = temp_add;      //points the current to the temp_add to finish the double link.
+	//THE ORDER IS IMPORTANT -- DON'T BREAK THE LINK OF CURRENT->NEXT UNTIL CURRENT->NEXT->PREV IS POINTED BACKWARDS AT TEMP_ADD
+	//made next_node after temp_add point back to temp_add
 	
 }
 
