@@ -21,7 +21,7 @@ public:
 	Planet * getPlanet(int);
 	void orbit();
 	void printStarInfo();
-	unsigned in getCurrentNumPlanets();
+	unsigned int getCurrentNumPlanets();
 
 
 };

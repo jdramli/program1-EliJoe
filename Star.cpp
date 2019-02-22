@@ -25,19 +25,36 @@ long Starvector::addPlanet(){
 	this->planets_vector.insert(current_size,new_planet);
 	
 }
-bool Starvector::removePlanet(int){
+bool Starvector::removePlanet(int index){
+	
+	return planets_vector.remove(index);
 	
 }
-Planet* Starvector::getPlanet(int){
+Planet* Starvector::getPlanet(int index){
+	
+	return planets_vector.read(index);
 	
 }
 void Starvector::orbit(){
 	
+	for(int p = 0; p < planets_vector.getCurrentNumPlanets(); p++){
+		//std::cout << "The current position is: " << this->planets[p]->getPos() << std::endl;
+		planets_vector[p] ->orbit();  // Should just require the simple dereference with * to orbit the object... so use ->
+	}
+	
 }
 void Starvector::printStarInfo(){
+	std:: cout << "The star currently has " << planets_vector. << " planets." << std::endl;
+	//std::cout << "The star can support up to  " << this->max_planets << " planets." << std::endl;
+	
+	for(int a = 0; a < this->current_planets; a++){
+		std::cout << "Planet " << planets[a]->getType() << a << " is " << this->planets[a]->getDistance() <<  " million miles away at position " << this->planets[a]->getPos() << " around the star." << std::endl;
+	}
 	
 }
 unsigned int Starvector::getCurrentNumPlanets(){
+	
+		return this->planets_vector.getNumElements();
 	
 }
 
