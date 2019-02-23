@@ -67,7 +67,7 @@ void Starvector::printStarInfo(){
 
 
 
-/*
+
 Starlist::Starlist(){
 	//initialize memory
 
@@ -77,7 +77,7 @@ Starlist::Starlist(){
 Starlist::~Starlist(){
 		//deallocate memory on deletion of Star(this Starlist class)
 }
-Starlist::long addPlanet(){
+long int Starlist::addPlanet(){
 
 }
 bool Starlist::removePlanet(int){
@@ -95,4 +95,4 @@ void Starlist::printStarInfo(){
 }
 unsigned int Starlist::getCurrentNumPlanets(){
 
-}*/
+}

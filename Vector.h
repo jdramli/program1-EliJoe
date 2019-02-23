@@ -10,7 +10,7 @@ class Vector{
 private:
 	unsigned int current_elements; // made unsigned to match consistency in functions
 	Planet ** vector;
-	unsigned long capacity;
+	unsigned int capacity;
 public:
 Vector();
 ~Vector();
@@ -18,7 +18,7 @@ Vector();
 void insert(int, Planet*);
 Planet * read(int);
 bool remove(int);
-unsigned long size();
+unsigned int size();
 
 unsigned int getNumElements(){ return this->current_elements;}
 
