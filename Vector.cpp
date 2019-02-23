@@ -23,11 +23,12 @@ Vector::~Vector(){
 void Vector::insert(int index, Planet* p){
 	//first check to make sure it is in bounds
 	if(index > this->capacity){
-
-
 		//the planet pointer is being passed with "p" so we dont' need to create any planet objects
 		Planet ** temp_vec = new Planet* [index+1];  //THIS IS WHERE WE CREATE THE SIZE OF INDEX+1 to avoid confusion of increments/decrements
 		for(int i = 0; i < index+1; i++){ //iterated up to un-increased 'capacity' here, because we would get a seg-fault since old vector will only be of size 'capacity'
+//			if(vector[i] == NULL){
+//				temp_vec[i] == NULL;
+//			}
 			temp_vec[i] = vector[i];
 		}
 		temp_vec[index] = p;  // using 'index' or this->capacity-1 should work.
@@ -76,12 +77,12 @@ Planet* Vector::read(int index){
 
 bool Vector::remove(int index){
 
-	if(index < 0 || index > this->current_elements){ return false;} //Can only remove the planet if the index is valid, otherwise returns false.
+	if(index < 0 || index > this->capacity){ return false;} //Can only remove the planet if the index is valid, otherwise returns false.
 
-	Planet ** temp_vec = new Planet*[this->current_elements-1];
+	Planet ** temp_vec = new Planet*[this->capacity-1];
 	//NOTE** NEED TO USE THE HANDLE AT THE INDEX TO DELETE THE PLANET OBJECT BEFORE COPYING THE NEW POINTERS
 	delete vector[index]; //this should actually take the pointer at the index and delete the underlying planet object
-	for(int i = 0; i < this->current_elements; i++){
+	for(int i = 0; i < this->capacity; i++){
 
 		if(i < index){
 			temp_vec[i] = vector[i];
@@ -94,6 +95,7 @@ bool Vector::remove(int index){
 	this->vector = temp_vec;
 
 	this->current_elements--;
+	this->capacity--;
 	return true;
 
 }
