@@ -6,10 +6,10 @@
 // You should also randomly select a planet type between rocky, habitable, and gaseous. Add a new private variable, char type that represents the planet type with a character: 'h' = habitable, 'r'=rocky, 'g'=gaseous
 
 Planet::Planet(int distance){
-	//this->id = id; //removed in update
-	
+	this->id =(long int) &(*this);
+
 	this->distance = distance;
-    this->pos = (rand() %359); // TODO: double check if this should be 359 or 360 to include 359
+  this->pos = (rand() %359); // TODO: double check if this should be 359 or 360 to include 359
 	int selector = (rand()%3);
 	if(selector == 0){
 			this->type = 'h'; // habitable
@@ -20,7 +20,7 @@ Planet::Planet(int distance){
 	else{
 		this->type = 'g'; // gaseous
 	}
-	 
+
 }
 
 int Planet::orbit(){

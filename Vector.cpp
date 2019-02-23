@@ -32,14 +32,14 @@ void Vector::insert(int index, Planet* p){
 		}
 		temp_vec[index] = p;  // using 'index' or this->capacity-1 should work.
 
-		//do we need a loop here to set the values in between to NULL?  hopefully not
+		//do we need a loop here to set the values in between to NULL?  hopefully not //maybe set other ID's to 0 in the constructors
 
 		if(vector != NULL) {delete [] this->vector;}
 		this->vector = temp_vec;
 		this->capacity = index+1; // can set future capacity AFTER the loop through the array, to ensure that old 'capacity' was used in the loop to prevent a segmentation fault
 		this->current_elements++;
 	}
-	//else, the index is IN-BOUNDS and the capacity doesn't need to be adjusted
+	//else, the index is IN-BOUNDS and the capacity should be increased by 1
 	else{
 			//Add the pointer element to the array of pointers
 
@@ -63,13 +63,14 @@ void Vector::insert(int index, Planet* p){
 }
 
 Planet* Vector::read(int index){
-
-	if(index > this->current_elements || index < 0){
+	if(index > this->capacity || index < 0){
+		return NULL;
+	}
+	if(vector[index]->getID() == NULL){
 		return NULL;
 	}
 
 	return vector[index]; // This should simply get a pointer from vector[index] i.e. vector [1] and return it, it is already a pointer
-
 }
 
 
@@ -102,6 +103,6 @@ unsigned int Vector::size(){
 	//calculating size could be the number of bytes of each element combined
 	//or the acutal # of elements.
 	return this->capacity; //check this
-	
+
 
 }
